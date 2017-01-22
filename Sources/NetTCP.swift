@@ -22,7 +22,7 @@ import PerfectThread
 #if os(Linux)
 import SwiftGlibc
 let AF_UNSPEC: Int32 = 0
-let INADDR_NONE = UInt32(0xffffffff)
+let INADDR_NONE = UInt32("ffffffff", radix: 16)
 let EINPROGRESS = Int32(115)
 #else
 import Darwin
