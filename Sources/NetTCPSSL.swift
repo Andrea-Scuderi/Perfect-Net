@@ -245,6 +245,7 @@ public class NetTCPSSL : NetTCP {
 		SSL_CTX_ctrl(sslCtx, SSL_CTRL_SET_ECDH_AUTO, 1, nil)
 	#endif
 		SSL_CTX_ctrl(sslCtx, SSL_CTRL_MODE, SSL_MODE_AUTO_RETRY, nil)
+		let SSL_OP_ALL = Int("80000BFF", radix: 16)!
 		SSL_CTX_ctrl(sslCtx, SSL_CTRL_OPTIONS, SSL_OP_ALL, nil)
 		
 		if !keyFilePassword.isEmpty {
